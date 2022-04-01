@@ -64,14 +64,18 @@ public class WordGenerator {
             int index = (int)(Math.random() * gameWords.size());
 
             gameWord = gameWords.get(index);
+            setGameWord(this.gameWord);
+            //System.out.println("This is getGameWord call: " + getGameWord());
             //System.out.println(gameWord);
             //System.out.println("Random Element is: " + gameWords.get(index));
         }
     }
 
-    public void compareWords() {
-        selectRandomWord();
-        System.out.println(gameWord);
+    public String getGameWord() {
+        return gameWord;
     }
 
+    public void setGameWord(String gameWord) {
+        this.gameWord = gameWord;
+    }
 }
