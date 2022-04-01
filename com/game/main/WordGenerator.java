@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class WordGenerator {
     /*
-    dictionary stores the dictionary words that are being read from the txt file.
-    gameWords stores the sorted words that are exactly 5 characters long that will be used for the game.
+        dictionary stores the dictionary words that are being read from the txt file.
+        gameWords stores the sorted words that are exactly 5 characters long that will be used for the game.
      */
 
     private static List<String> dictionary = new ArrayList<String>();
@@ -17,7 +17,7 @@ public class WordGenerator {
     private String gameWord;
 
     /*
-    readFile simply stores the file into the dictionary arrayList.
+        readFile simply stores the file into the dictionary arrayList.
      */
 
     public void readFile() {
@@ -36,11 +36,10 @@ public class WordGenerator {
     }
 
     /*
-    sorts the words stores in dictionary to only have exactly 5 characters and stores them in gameWords.
+        sorts the words stores in dictionary to only have exactly 5 characters and stores them in gameWords.
      */
 
     public void sort() {
-        readFile();
         String[] sortedWords = dictionary.toArray(new String[0]);
         for(int i = 0;i < sortedWords.length;i++) {
             if (sortedWords[i].length() == 5) {
@@ -51,12 +50,11 @@ public class WordGenerator {
     }
 
     /*
-    Randomly selects a string from the gameWords arrayList.
-    This randomly selected string will be used for the game.
+        Randomly selects a string from the gameWords arrayList.
+        This randomly selected string will be used for the game.
      */
 
     public void selectRandomWord() {
-        sort();
         // loop to print elements at random
         for (int i = 0; i < 1; i++)
         {
@@ -65,11 +63,12 @@ public class WordGenerator {
 
             gameWord = gameWords.get(index);
             setGameWord(this.gameWord);
-            //System.out.println("This is getGameWord call: " + getGameWord());
-            //System.out.println(gameWord);
-            //System.out.println("Random Element is: " + gameWords.get(index));
         }
     }
+
+    /*
+        Getter and setter methods for String gameWord
+    */
 
     public String getGameWord() {
         return gameWord;
