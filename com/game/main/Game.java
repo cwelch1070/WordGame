@@ -15,6 +15,8 @@ public class Game {
     private int stopGame;
     private Scanner userInput = new Scanner((System.in));
     private Scanner exit = new Scanner((System.in));
+    private char[] charOfGameWord;
+    private char[] charOfUsersGuess;
     private WordGenerator wordGenerator = new WordGenerator();
 
     /*
@@ -28,9 +30,17 @@ public class Game {
             wordGenerator.selectRandomWord();
             intro();
             takeGuess();
+            showCorrectChar();
 
             System.out.println("Would you like to play again?\nEnter 0 to continue or any other number to exit.");
-            stopGame = exit.nextInt();
+
+            try {
+                stopGame = exit.nextInt();
+            }catch(Exception e) {
+                System.out.println("You entered a non integer value. Please enter a integer value.\nGoodbye...");
+                break;
+            }
+
 
             if(stopGame == 0) {
                 continue;
@@ -60,6 +70,36 @@ public class Game {
     public void intro() {
         System.out.println("Word to be guessed: " + wordGenerator.getGameWord());
         System.out.println("Welcome to WordGame.\nThe rules are simple, you get 5 chances to guess a 5 letter word.");
+    }
+
+    public void showCorrectChar() {
+        charOfGameWord = new char[wordGenerator.getGameWord().length()];
+        charOfUsersGuess = new char[getUsersGuess().length()];
+
+        /*
+            Breaks usersGuess into characters and stores those characters in charOfUsersGuess
+        */
+
+        for(int i = 0;i < getUsersGuess().length();i++) {
+            charOfUsersGuess[i] = getUsersGuess().charAt(i);
+        }
+
+        for(char c : charOfUsersGuess) {
+            System.out.println(c);
+        }
+
+        /*
+            Breaks gameWord into characters and stores those characters in charOfGameWord array
+        */
+
+        for (int i = 0; i < wordGenerator.getGameWord().length(); i++) {
+            charOfGameWord[i] = wordGenerator.getGameWord().charAt(i);
+        }
+
+        // Printing content of array
+        for (char c : charOfGameWord) {
+            System.out.println(c);
+        }
     }
 
     /*

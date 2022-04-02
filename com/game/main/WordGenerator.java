@@ -44,7 +44,6 @@ public class WordGenerator {
         for(int i = 0;i < sortedWords.length;i++) {
             if (sortedWords[i].length() == 5) {
                 gameWords.add(sortedWords[i]);
-                //System.out.println("Words with 5 letters: " + sortedWords[i]);
             }
         }
     }
