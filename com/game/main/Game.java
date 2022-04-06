@@ -8,6 +8,8 @@ public class Game {
         -stopGame stores users input that determines if they want to play again or quit the game
         -userInput is a scanner object to capture the users guess and store it in usersGuess
         -exit is a scanner object used to capture the users input and store in stopGame to continue or exit the game
+        -charOfGame and charOfUsersGuess are the beginnings of the game being able to tell the users what letters are also
+         in the word they are trying to guess
         -WordGenerator is an object of the WordGenerator class so that methods from that class can be used here in the Game class
     */
 
@@ -51,7 +53,7 @@ public class Game {
     }
 
     /*
-        Handles the users guess and determines if the users guess was correct or not
+        Handles the users guess and determines if the users guess was correct
     */
 
     public void takeGuess() {
