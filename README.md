@@ -14,7 +14,7 @@ those five guesses the game ends and the users is asked if they would like to ex
 #### Read Text File
 The program first reads a text documnent that contains 58,000 dictionary words. These 58,000 words are then stored in an arrayList, an arrayList was chosen over a
 standard array because the size that the array needed to be was unknown. An arrayList does not require a size or length parameter so an arrayList best suited the 
-programms needs.
+programs needs.
 
 ![Screenshot (103)](https://user-images.githubusercontent.com/90748206/162023973-3d6d58a7-2719-4eda-b202-5e9c35f511c3.png)
 
