@@ -1,5 +1,5 @@
 # WordGame
-This a command line version of the game Wordle that I recreated as a project to practice programming in java. 
+This is a command line version of the game Wordle that I recreated as a project to practice programming in java. 
 The game is still a work in progress but is functional.
 ## Project Goals
 The goal of this project was to create a java command line game that demonstrated my understanding of object orineted programming with java. The game contains examples
