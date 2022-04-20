@@ -32,6 +32,7 @@ public class Game {
             wordGenerator.selectRandomWord();
             intro();
             takeGuess();
+            showWord();
 
             System.out.println("\nWould you like to play again?\nEnter 0 to continue or any other number to exit.");
 
@@ -78,6 +79,10 @@ public class Game {
     public void intro() {
         //System.out.println("Word to be guessed: " + wordGenerator.getGameWord());
         System.out.println("Welcome to WordGame.\nThe rules are simple, you get 5 chances to guess a 5 letter word.");
+    }
+
+    public void showWord() {
+        System.out.println("\nThe correct word was: " + wordGenerator.getGameWord());
     }
 
     /*
