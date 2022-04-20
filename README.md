@@ -1,9 +1,13 @@
 # WordGame
 This is a command line version of the game Wordle that I recreated as a project to practice programming in java. 
 The game is still a work in progress but is functional.
+
 ## Project Goals
 The goal of this project was to create a java command line game that demonstrated my understanding of object orineted programming with java. The game contains examples
 of composition, encapsulation, and polymorphism which are the three major components that make java an object oriented language.
+
+## Future Plans
+I plan to make this project into a fully functional GUI application with the use of jframe in the future. With the addition of a GUI the game will be more user friendly and easier to play rather than just being characters in a console application.
 
 ## What it does
 The games concept is simple, the players goal is to guess a random five letter word. Only five guesses are allowed and if the word is not guessed correctly within 
@@ -35,3 +39,8 @@ Input is then taken from the player to represent the users guess. That input is 
 If the two strings are equal the player is informed that their guess was correct if the guess was not equal the player is informed their guess was not correct.
 
 ![Screenshot (106)](https://user-images.githubusercontent.com/90748206/162028338-fed6f6ea-b3bf-4cf7-827f-921a11ae900c.png)
+
+#### Compare Each Character of Each Word
+The game word and the users guess word are both broken down into two chracters arrays. One containing the characters from the game word and the other containing the characters from the users guess word. Each postion in those are arrays are then compared with the same postion in the opposite array. If both postions contain the same character that character is then printed on screen for the user to see in the form of a hint.
+
+![Screenshot (23)](https://user-images.githubusercontent.com/90748206/164324505-b2d7a69b-a875-4a81-9946-8e8a6154d01a.png)
