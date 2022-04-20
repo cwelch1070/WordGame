@@ -26,15 +26,14 @@ public class Game {
     */
 
     public void start() {
-        while (true) {
+        while(true) {
             wordGenerator.readFile();
             wordGenerator.sort();
             wordGenerator.selectRandomWord();
             intro();
             takeGuess();
-            showCorrectChar();
 
-            System.out.println("Would you like to play again?\nEnter 0 to continue or any other number to exit.");
+            System.out.println("\nWould you like to play again?\nEnter 0 to continue or any other number to exit.");
 
             try {
                 stopGame = exit.nextInt();
@@ -53,54 +52,89 @@ public class Game {
     }
 
     /*
-        Handles the users guess and determines if the users guess was correct
+        Handles the users guess and determines if the users guess was correct.
+        Controls the amount of times the user is able to guess.
     */
 
     public void takeGuess() {
         for (int i = 0;i < 5;i++) {
-            System.out.println("Your on guess number: " + i);
+            System.out.println("\nYour on guess number: " + i);
             System.out.println("Enter your guess: ");
             setUsersGuess(userInput.nextLine());  // Read user input
-            System.out.println(wordGenerator.getGameWord().equals(getUsersGuess()));
+            System.out.println("Your answer is " + wordGenerator.getGameWord().equals(getUsersGuess()) + ". Try again.");
+            System.out.println("The correctly guessed characters in the word are: ");
+            showCorrectChar();
             if(wordGenerator.getGameWord().equals(getUsersGuess())) {
-                System.out.println("That's correct! You win!");
+                System.out.println("\nThat's correct! You win!");
                 break;
             }
         }
     }
 
+    /*
+        Into to game called at start of program
+    */
+
     public void intro() {
-        System.out.println("Word to be guessed: " + wordGenerator.getGameWord());
+        //System.out.println("Word to be guessed: " + wordGenerator.getGameWord());
         System.out.println("Welcome to WordGame.\nThe rules are simple, you get 5 chances to guess a 5 letter word.");
     }
+
+    /*
+        This method will show the user what letters in the word they have guessed are also in the word they are trying to
+        guess. It will function as a hint to the user to decrease the difficulty of the game.
+    */
 
     public void showCorrectChar() {
         charOfGameWord = new char[wordGenerator.getGameWord().length()];
         charOfUsersGuess = new char[getUsersGuess().length()];
 
-        /*
-            Breaks usersGuess into characters and stores those characters in charOfUsersGuess
-        */
-
+        //Breaks usersGuess into characters and stores those characters in charOfUsersGuess
         for(int i = 0;i < getUsersGuess().length();i++) {
             charOfUsersGuess[i] = getUsersGuess().charAt(i);
         }
 
-        for(char c : charOfUsersGuess) {
-            System.out.println(c);
-        }
-
-        /*
-            Breaks gameWord into characters and stores those characters in charOfGameWord array
-        */
-
+        //Breaks gameWord into characters and stores those characters in charOfGameWord array
         for (int i = 0; i < wordGenerator.getGameWord().length(); i++) {
             charOfGameWord[i] = wordGenerator.getGameWord().charAt(i);
         }
 
-        // Printing content of array
-        for (char c : charOfGameWord) {
-            System.out.println(c);
+        /*
+            Compare each position in the two char arrays to see if they are equal. If they are equal print the contents
+            of that position in the array, if not, ignore that position and move to the next.
+
+            For example take charOfGameWord[0] and check if it is equal to charOfUsersGuess[0]. Continue this for the
+            remaining 4 positions in the array.
+        */
+
+        if(charOfGameWord[0] == charOfUsersGuess[0]) {
+            System.out.print(charOfGameWord[0]);
+        } else {
+            System.out.print("-");
+        }
+
+        if(charOfGameWord[1] == charOfUsersGuess[1]) {
+            System.out.print(charOfGameWord[1]);
+        } else {
+            System.out.print("-");
+        }
+
+        if(charOfGameWord[2] == charOfUsersGuess[2]) {
+            System.out.print(charOfGameWord[2]);
+        } else {
+            System.out.print("-");
+        }
+
+        if(charOfGameWord[3] == charOfUsersGuess[3]) {
+            System.out.print(charOfGameWord[3]);
+        } else {
+            System.out.print("-");
+        }
+
+        if(charOfGameWord[4] == charOfUsersGuess[4]) {
+            System.out.print(charOfGameWord[4]);
+        } else {
+            System.out.print("-");
         }
     }
 
