@@ -41,6 +41,6 @@ If the two strings are equal the player is informed that their guess was correct
 ![Screenshot (106)](https://user-images.githubusercontent.com/90748206/162028338-fed6f6ea-b3bf-4cf7-827f-921a11ae900c.png)
 
 #### Compare Each Character of Each Word
-The game word and the users guess word are both broken down into two chracters arrays. One containing the characters from the game word and the other containing the characters from the users guess word. Each postion in those are arrays are then compared with the same postion in the opposite array. If both postions contain the same character that character is then printed on screen for the user to see in the form of a hint.
+The game word and the users guess word are both broken down into two characters arrays. One containing the characters from the game word and the other containing the characters from the users guess word. Each postion in those arrays are then compared with the same postion in the opposite array. If both postions contain the same character that character is then printed on screen for the user to see in the form of a hint.
 
 ![Screenshot (23)](https://user-images.githubusercontent.com/90748206/164324505-b2d7a69b-a875-4a81-9946-8e8a6154d01a.png)
